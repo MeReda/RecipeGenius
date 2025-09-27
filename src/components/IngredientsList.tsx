@@ -1,8 +1,13 @@
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faDeleteLeft} from "@fortawesome/free-solid-svg-icons";
-import {useRef} from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
+import { type Ref, useRef } from "react";
 
-export default function IngredientsList(props) {
+export default function IngredientsList(props: {
+  ingredients: string[];
+  onClick: (event: React.MouseEvent<SVGSVGElement>) => void;
+  ref: Ref<null>;
+  getRecipe: () => void;
+}) {
   const buttonRef = useRef(null);
 
   const ingredientsListItems = props.ingredients.map((ingredient) => (
